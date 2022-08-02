@@ -1,0 +1,303 @@
+@import 'src/App';
+
+.page {
+  background-color: rgba(208, 208, 200, 0.1);
+  border: solid 1px #c5c5c5;
+  max-width: 2240px;
+  margin: 0 auto;
+}
+
+.header {
+  padding-top: 40px;
+  margin: 0 53px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  .links {
+    ul {
+      list-style-type: none;
+      font-size: 18px;
+
+      li {
+        display: inline;
+        cursor: pointer;
+
+        &:first-child {
+          margin-right: 40px;
+        }
+      }
+    }
+  }
+
+  .socialNetwork {
+    position: absolute;
+    top: 250px;
+    left: -140px;
+    transform: rotate(-90deg);
+
+    ul {
+      list-style-type: none;
+      font-size: 16px;
+
+      li {
+        display: inline;
+        cursor: pointer;
+
+        &:nth-child(2) {
+          margin: 27px;
+        }
+      }
+    }
+  }
+}
+
+.main {
+  position: relative;
+  width: 1265px;
+  margin: 0 auto;
+
+  &_info {
+    margin: 107px auto 0;
+    display: flex;
+    justify-content: space-between;
+
+    &_text {
+      margin-top: 60px;
+      width: 616px;
+      height: 384px;
+      font-size: 24px;
+      line-height: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+  &_text {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    height: fit-content;
+    margin-bottom: 229px;
+    p {
+      font-size: 90px;
+      line-height: 104px;
+    }
+  }
+}
+
+.cases {
+  position: relative;
+  margin: 232px auto 182px;
+  display: flex;
+  justify-content: space-between;
+
+  &_firstBlock, &_secondBlock {
+    display: grid;
+    grid-row-gap: 32px;
+    grid-template-columns: 616px;
+    height: fit-content;
+
+    div {
+      height: 770px;
+      position: relative;
+
+      .caseBtn {
+        position: absolute;
+        width: 56px;
+        height: 56px;
+        border-radius: 100%;
+        background-color: rgba(255, 255, 255, 0.7);
+        z-index: 6;
+        bottom: 29px;
+        right: 29px;
+
+        img {
+          margin: 20px;
+        }
+      }
+    }
+
+    .caseUXDesigner {
+      width: 616px;
+      height: 616px;
+      background: linear-gradient(to bottom right, #0058FF, #A78349);
+
+      img {
+        margin: 46px 0 0 40px;
+      }
+    }
+  }
+
+  &_secondBlock {
+    margin-top: 121px;
+
+    .caseDiversity {
+      width: 616px;
+      height: 616px;
+      background-color: #01FEB6;
+
+      img {
+        margin: 61px 158px;
+      }
+    }
+
+    .caseLGTB {
+      height: 140px;
+      font-size: 18px;
+      line-height: 28px;
+
+      p {
+        font-size: 30px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+.article {
+  margin: 84px 0 300px 0;
+  font-size: 16px;
+  line-height: 24px;
+
+  p {
+    font-size: 60px;
+    line-height: 60px;
+    margin-top: 21px;
+  }
+
+  &_info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    line-height: 36px;
+
+     div {
+       width: 575px;
+       margin: 69px 0 42px;
+     }
+  }
+
+  &_btn {
+    border: solid 1px #c5c5c5;
+    width: 292px;
+    height: 100px;
+    margin-bottom: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+  }
+  .articleCases {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    &_firstBlock, &_secondBlock {
+      display: grid;
+      grid-row-gap: 32px;
+      grid-template-columns: 616px;
+      height: fit-content;
+    }
+
+    &_firstBlock {
+      margin-top: 66px;
+
+      .caseOGI {
+        font-size: 18px;
+        line-height: 28px;
+        p {
+          margin: 0 0 20px;
+          font-size: 30px;
+        }
+      }
+    }
+
+    div {
+      height: fit-content;
+      position: relative;
+
+      .caseBtn {
+        position: absolute;
+        width: 56px;
+        height: 56px;
+        border-radius: 100%;
+        background-color: rgba(255, 255, 255, 0.7);
+        z-index: 6;
+        bottom: 29px;
+        right: 29px;
+
+        img {
+          margin: 20px;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  font-size: 18px;
+  line-height: 24px;
+  &_firstBlock {
+    display: flex;
+    justify-content: space-between;
+    border: solid 1px #c5c5c5;
+    height: 271px;
+    border-left-style: none;
+    border-right-style: none;
+
+    &_info {
+      width: 50%;
+      padding: 40px 53px;
+
+      p {
+        font-size: 32px;
+        line-height: 46px;
+        margin-top: 25px;
+      }
+    }
+
+    &_next {
+      height: 270px;
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
+
+      .nextText {
+        width: calc(100% - 271px);
+        height: 100%;
+        background: linear-gradient(114deg, rgba(0,88,255,1) 13%, rgba(105,77,32,1) 99%);
+        color: #ffff;
+        padding: 47px 0 76px 55px;
+        position: relative;
+
+        p {
+          font-size: 32px;
+          line-height: 44px;
+          margin-top: 22px;
+        }
+
+        img {
+          position: absolute;
+          right: 40px;
+        }
+      }
+    }
+  }
+
+  &_secondBlock {
+    padding: 40px 53px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    height: 340px;
+    background-color: #ffff;
+    &_cities {
+      width: 293px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
