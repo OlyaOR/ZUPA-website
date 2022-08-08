@@ -7,3 +7,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: rgba(208, 208, 200, 0.2);
 }
+
+@font-face {
+  font-family: "Degular";
+  src: url("https://use.typekit.net/dik6rgm.css") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+

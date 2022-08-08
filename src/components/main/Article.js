@@ -1,11 +1,12 @@
 import React from 'react';
-import style from '../../style/Main.module.scss'
-import * as L from '../../constants/labels'
-import Icon from "../../img/main/icon-article.svg";
-import Arrow from "../../img/main/Icon-arrow.svg";
-import {ArticleCases} from "./ArticleCases";
+import style from '../../style/Main.module.scss';
+import * as L from '../../constants/labels';
+import Icon from '../../img/main/icon-article.svg';
+import Arrow from '../../img/main/Icon-arrow.svg';
+import { ArticleCases } from './ArticleCases';
 
-export const Article = () => {
+
+export const Article = ({onOpenCase}) => {
     return (
         <div className={style.article}>
             {L.LOREM}
@@ -20,14 +21,16 @@ export const Article = () => {
                 <img
                     src={ Icon }
                     alt={ L.READ_THE_ARTICLE }
+                    loading={ L.LAZY }
                 />
                 <img
                     src={ Arrow }
                     alt={ L.ARROW }
+                    loading={ L.LAZY }
                 />
                 { L.READ_THE_ARTICLE }
             </div>
-            <ArticleCases/>
+            <ArticleCases onOpenCase={onOpenCase}/>
         </div>
     )
 }

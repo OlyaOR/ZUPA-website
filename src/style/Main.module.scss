@@ -1,56 +1,37 @@
 @import 'src/App';
 
-.page {
-  background-color: rgba(208, 208, 200, 0.1);
-  border: solid 1px #c5c5c5;
-  max-width: 2240px;
-  margin: 0 auto;
+@keyframes anm1 {
+  to {
+    transform: scale(1.1);
+    opacity: 0.6;
+  }
 }
 
-.header {
-  padding-top: 40px;
-  margin: 0 53px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@keyframes anm2 {
+  to {
+    width: 76px;
+    border-radius: 100px;
+  }
+}
+
+@keyframes anm3 {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes anm4 {
+  to {
+    opacity: 0.6;
+  }
+}
+
+.mainPage {
+  background-color: rgba(208, 208, 200, 0.1);
+  border: solid 1px #c5c5c5;
+  max-width: 1980px;
+  margin: 0 auto;
   position: relative;
-
-  .links {
-    ul {
-      list-style-type: none;
-      font-size: 18px;
-
-      li {
-        display: inline;
-        cursor: pointer;
-
-        &:first-child {
-          margin-right: 40px;
-        }
-      }
-    }
-  }
-
-  .socialNetwork {
-    position: absolute;
-    top: 250px;
-    left: -140px;
-    transform: rotate(-90deg);
-
-    ul {
-      list-style-type: none;
-      font-size: 16px;
-
-      li {
-        display: inline;
-        cursor: pointer;
-
-        &:nth-child(2) {
-          margin: 27px;
-        }
-      }
-    }
-  }
 }
 
 .main {
@@ -59,7 +40,7 @@
   margin: 0 auto;
 
   &_info {
-    margin: 107px auto 0;
+    margin: 155px auto 0;
     display: flex;
     justify-content: space-between;
 
@@ -99,23 +80,64 @@
     grid-template-columns: 616px;
     height: fit-content;
 
-    div {
+    &_case, &_case2 {
       height: 770px;
+      width: 616px;
+      background-color: #000;
       position: relative;
+      cursor: pointer;
+
+      .imgText {
+        position: absolute;
+        z-index: 6;
+        bottom: 29px;
+        left: 29px;
+        font-size: 16px;
+        line-height: 24px;
+        color: #fff;
+        opacity: 0;
+        p {
+          font-size: 60px;
+          line-height: 60px;
+        }
+      }
 
       .caseBtn {
         position: absolute;
         width: 56px;
         height: 56px;
-        border-radius: 100%;
+        border-radius: 100px;
         background-color: rgba(255, 255, 255, 0.7);
         z-index: 6;
         bottom: 29px;
         right: 29px;
+        text-align: center;
 
         img {
           margin: 20px;
         }
+      }
+    }
+
+    &_case:hover, &_case2:hover {
+      overflow: hidden;
+
+      .imgText {
+        animation: anm3 0.75s forwards;
+      }
+
+      .caseBtn {
+        animation: anm2 0.75s forwards;
+      }
+
+      .img {
+        animation: anm1 0.75s forwards;
+      }
+    }
+
+    &_case2:hover {
+      .img {
+        animation: anm4 0.75s forwards;
       }
     }
 
@@ -187,8 +209,8 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    cursor: pointer;
   }
+
   .articleCases {
     position: relative;
     display: flex;
@@ -199,6 +221,69 @@
       grid-row-gap: 32px;
       grid-template-columns: 616px;
       height: fit-content;
+
+      &_case, &_case2 {
+        height: 770px;
+        width: 616px;
+        background-color: #000;
+        cursor: pointer;
+        position: relative;
+
+        .imgText {
+          position: absolute;
+          z-index: 6;
+          bottom: 29px;
+          left: 29px;
+          font-size: 16px;
+          line-height: 24px;
+          color: #fff;
+          opacity: 0;
+
+          p {
+            margin: 0;
+            font-size: 60px;
+            line-height: 60px;
+          }
+        }
+
+        .caseBtn {
+          position: absolute;
+          width: 56px;
+          height: 56px;
+          border-radius: 100px;
+          background-color: rgba(255, 255, 255, 0.7);
+          z-index: 6;
+          bottom: 29px;
+          right: 29px;
+          text-align: center;
+
+          img {
+            margin: 20px;
+          }
+        }
+      }
+
+      &_case:hover, &_case2:hover {
+        overflow: hidden;
+
+        .imgText {
+          animation: anm3 0.75s forwards;
+        }
+
+        .caseBtn {
+          animation: anm2 0.75s forwards;
+        }
+
+        .img {
+          animation: anm1 0.75s forwards;
+        }
+      }
+
+      &_case2:hover {
+        .img {
+          animation: anm4 0.75s forwards;
+        }
+      }
     }
 
     &_firstBlock {
@@ -214,90 +299,24 @@
       }
     }
 
-    div {
-      height: fit-content;
-      position: relative;
+    [tooltip] {
+      cursor: pointer;
+    }
 
-      .caseBtn {
-        position: absolute;
-        width: 56px;
-        height: 56px;
-        border-radius: 100%;
-        background-color: rgba(255, 255, 255, 0.7);
-        z-index: 6;
-        bottom: 29px;
-        right: 29px;
-
-        img {
-          margin: 20px;
-        }
-      }
+    [tooltip]:before {
+      position : absolute;
+      content : attr(tooltip);
+      opacity : 0;
+    }
+    [tooltip]:hover:before {
+      opacity : 1;
+      width: 200px;
+      height: 26px;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+      border-radius: 5px;
+      bottom: 100px;
+      right: 30px;
     }
   }
 }
-
-.footer {
-  font-size: 18px;
-  line-height: 24px;
-  &_firstBlock {
-    display: flex;
-    justify-content: space-between;
-    border: solid 1px #c5c5c5;
-    height: 271px;
-    border-left-style: none;
-    border-right-style: none;
-
-    &_info {
-      width: 50%;
-      padding: 40px 53px;
-
-      p {
-        font-size: 32px;
-        line-height: 46px;
-        margin-top: 25px;
-      }
-    }
-
-    &_next {
-      height: 270px;
-      width: 50%;
-      display: flex;
-      justify-content: space-between;
-
-      .nextText {
-        width: calc(100% - 271px);
-        height: 100%;
-        background: linear-gradient(114deg, rgba(0,88,255,1) 13%, rgba(105,77,32,1) 99%);
-        color: #ffff;
-        padding: 47px 0 76px 55px;
-        position: relative;
-
-        p {
-          font-size: 32px;
-          line-height: 44px;
-          margin-top: 22px;
-        }
-
-        img {
-          position: absolute;
-          right: 40px;
-        }
-      }
-    }
-  }
-
-  &_secondBlock {
-    padding: 40px 53px;
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    height: 340px;
-    background-color: #ffff;
-    &_cities {
-      width: 293px;
-      display: flex;
-      justify-content: space-between;
-    }
-  }
-}
-
